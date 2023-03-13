@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "561948368340",
+    "project_id": "my-lost-and-found-application",
+    "storage_bucket": "my-lost-and-found-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561948368340:android:a3f927e68d845dd6124a41",
+        "android_client_info": {
+          "package_name": "com.example.lostandfound"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561948368340-nlsf87v1k343k3joc8lju8rkmt57qpta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeW364U8xl8z3oGwIZPa92ZF2PekAJY9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561948368340-nlsf87v1k343k3joc8lju8rkmt57qpta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561948368340:android:27441cf37fcdab69124a41",
+        "android_client_info": {
+          "package_name": "com.example.mylostandfoundapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561948368340-nlsf87v1k343k3joc8lju8rkmt57qpta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeW364U8xl8z3oGwIZPa92ZF2PekAJY9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561948368340-nlsf87v1k343k3joc8lju8rkmt57qpta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561948368340:android:698a5444ba9c3e5c124a41",
+        "android_client_info": {
+          "package_name": "com.example.wocproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561948368340-nlsf87v1k343k3joc8lju8rkmt57qpta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeW364U8xl8z3oGwIZPa92ZF2PekAJY9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561948368340-nlsf87v1k343k3joc8lju8rkmt57qpta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
