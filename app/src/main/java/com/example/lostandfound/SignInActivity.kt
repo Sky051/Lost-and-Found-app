@@ -16,18 +16,18 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        firebaseAuth= FirebaseAuth.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
         binding.textView2.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 
         binding.button.setOnClickListener {
-            val email = binding.email.text.toString()
-            val pass = binding.password.text.toString()
+            val email = binding.email.text.toString().trim()
+            val pass = binding.password.text.toString().trim()
 
 
-            if (email.isNotEmpty() && pass.isNotEmpty() ) {
+            if (email.isNotEmpty() && pass.isNotEmpty()) {
 
 
                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
@@ -44,12 +44,14 @@ class SignInActivity : AppCompatActivity() {
                 Toast.makeText(this, "Empty Fills are not allowed!!", Toast.LENGTH_SHORT).show()
             }
         }
+        }
+    override fun onStart() {
+            super.onStart()
+            if (firebaseAuth.currentUser != null) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
 
-    }override fun onStart(){
-        super.onStart()
-        if(firebaseAuth.currentUser != null){
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+
         }
     }
-}

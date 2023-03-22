@@ -12,18 +12,29 @@
         android:theme="@style/Theme.LostAndFound"
         tools:targetApi="31">
         <activity
+            android:name=".foundshowall"
+            android:exported="false" />
+        <activity
+            android:name=".foundupload"
+            android:exported="false" />
+        <activity
+            android:name=".lostshow"
+            android:exported="false" />
+        <activity
+            android:name=".lostupload"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".SignInActivity"
             android:exported="true">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -33,6 +44,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>
