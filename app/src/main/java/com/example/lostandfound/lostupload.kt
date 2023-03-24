@@ -15,14 +15,11 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
 class lostupload : AppCompatActivity() {
+
     private lateinit var binding: ActivityLostuploadBinding
     private lateinit var storageRef :StorageReference
     private lateinit var firebaseFirestore : FirebaseFirestore
     private var imageUri : Uri? = null
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,21 +32,15 @@ class lostupload : AppCompatActivity() {
     private fun registerClickEvents(){
         binding.uploadbtn.setOnClickListener {
             uploadImage()
-
-
-
         }
         binding.showbtn.setOnClickListener {
             startActivity(Intent(this, lostshow::class.java))
         }
-
-
-       binding.imageView.setOnClickListener{
-       resultLauncher.launch("images/*")
+        binding.imageView.setOnClickListener{
+       resultLauncher.launch("image/*")
        }
 
     }
-
     private val resultLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()){
 
@@ -73,9 +64,9 @@ class lostupload : AppCompatActivity() {
                         val map = HashMap<String , Any>()
                         map["pic"]= uri.toString()
 
-                        firebaseFirestore.collection("images").add(map).addOnCompleteListener {firestoreTask ->
+                        firebaseFirestore.collection("images").add(map).addOnCompleteListener {FirestoreTask ->
 
-                        if (firestoreTask.isSuccessful){
+                        if (FirestoreTask.isSuccessful){
                             Toast.makeText( this,"Uploaded Successfully",Toast.LENGTH_SHORT).show()
 
                         }else{

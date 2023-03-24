@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/new3"
     tools:context=".SignInActivity">
 
     <TextView
@@ -14,7 +14,8 @@
         android:gravity="center"
         android:layout_marginTop="68dp"
         android:text="SIGN IN"
-        android:textColor="@color/white"
+
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -27,6 +28,9 @@
         android:layout_height="54dp"
         android:layout_marginTop="132dp"
         android:hint="Email"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
 
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,11 +40,13 @@
 
     <EditText
         android:id="@+id/password"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:layout_width="364dp"
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
         android:hint="Password"
-        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.34"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,11 +54,12 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="102dp"
+        android:layout_height="54dp"
         android:layout_marginTop="72dp"
-        android:background="@color/white"
+        android:background="#BA2544"
         android:text="Sign In"
+        android:textColor="#B3E5FC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Not Registered, Sign Up!"
-        android:textColor="@color/white"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

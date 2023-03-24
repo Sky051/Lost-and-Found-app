@@ -27,19 +27,14 @@ class found : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentFoundBinding.inflate(inflater, container, false)
-        binding.uploadbtn.setOnClickListener {
+        binding.floatingActionButton.setOnClickListener {
             activity?.let {
-                val intent = Intent(it, foundupload::class.java)
+                val intent = Intent(it, Found_upload::class.java)
                 it.startActivity(intent)
             }
         }
 
-        binding.showallbtn.setOnClickListener {
-            activity?.let {
-                val intent = Intent(it, foundshowall::class.java)
-                it.startActivity(intent)
-            }
-        }
+
         return binding.root
         }
 

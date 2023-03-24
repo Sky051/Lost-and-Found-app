@@ -20,19 +20,14 @@ class lost: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentLostBinding.inflate(inflater, container, false)
-        binding.uploadbtn.setOnClickListener {
+        binding.floatingActionButton.setOnClickListener {
             activity?.let {
                 val intent = Intent(it, lostupload::class.java)
                 it.startActivity(intent)
             }
         }
 
-        binding.showallbtn.setOnClickListener {
-            activity?.let {
-                val intent = Intent(it, lostshow::class.java)
-                it.startActivity(intent)
-            }
-        }
+
         return binding.root
     }
 

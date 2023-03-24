@@ -1,8 +1,10 @@
 package com.example.lostandfound
 
+import android.annotation.SuppressLint
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lostandfound.databinding.ActivityLostshowBinding
 import com.google.firebase.firestore.FirebaseFirestore
@@ -14,7 +16,7 @@ class lostshow : AppCompatActivity() {
 
     private lateinit var firebaseFirestore : FirebaseFirestore
     private var mList = mutableListOf<String>()
-    private lateinit var adapter: imagesAdapter
+    private lateinit var adapterLost: imagesAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,16 +36,19 @@ class lostshow : AppCompatActivity() {
         firebaseFirestore = FirebaseFirestore.getInstance()
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter= imagesAdapter(mList)
-        binding.recyclerView.adapter= adapter
+        adapterLost= imagesAdapter(mList)
+        binding.recyclerView.adapter= adapterLost
     }
+    @SuppressLint("NotifyDataSetChanged")
     private fun getImages(){
+        binding.progressBar3.visibility=View.VISIBLE
      firebaseFirestore.collection("images")
          .get().addOnSuccessListener {
              for (i in it){
                  mList.add(i.data["pic"].toString())
              }
-             adapter.notifyDataSetChanged()
+             adapterLost.notifyDataSetChanged()
+             binding.progressBar3.visibility=View.GONE
 
          }
 

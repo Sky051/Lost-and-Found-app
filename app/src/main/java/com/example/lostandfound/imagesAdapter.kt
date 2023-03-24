@@ -11,15 +11,15 @@ class imagesAdapter(private var mList: List<String>) :
     inner class ImagesViewHolder(var binding: EachItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImagesViewHolder
-    {
-  val binding=EachItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImagesViewHolder {
+        val binding = EachItemBinding.inflate(LayoutInflater.from(parent.context) , parent , false)
         return ImagesViewHolder(binding)
     }
+
     override fun onBindViewHolder(holder: ImagesViewHolder, position: Int) {
         with(holder.binding) {
             with(mList[position]) {
-                Picasso.get().load(this).into(imageView)
+                Picasso.get().load(this).into(ImageView)
 
             }
         }
