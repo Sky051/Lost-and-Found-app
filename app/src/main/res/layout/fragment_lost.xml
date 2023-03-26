@@ -5,16 +5,21 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".lost"
-    android:background="@drawable/new3">
+    android:background="@drawable/b5">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
         android:text="Lost items"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:textColorHighlight="@color/black"
+
         android:textSize="50sp" />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -23,8 +28,17 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="325dp"
         android:layout_marginBottom="50dp"
+
         android:clickable="true"
-        android:src="@drawable/baseline" />
+        android:src="@drawable/baseline"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="253dp"
+        android:layout_height="227dp"
+        android:layout_gravity="center"
+        android:src="@drawable/loststicker" />
 
 
 </FrameLayout>

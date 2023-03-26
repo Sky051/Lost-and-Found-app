@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/new3"
+    android:background="@drawable/b5"
     tools:context=".Found_upload">
     <TextView
         android:id="@+id/text11"

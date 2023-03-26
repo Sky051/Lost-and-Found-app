@@ -15,6 +15,9 @@ class imagesAdapter(private var mList: List<String>) :
         val binding = EachItemBinding.inflate(LayoutInflater.from(parent.context) , parent , false)
         return ImagesViewHolder(binding)
     }
+    override fun getItemCount(): Int {
+        return mList.size
+    }
 
     override fun onBindViewHolder(holder: ImagesViewHolder, position: Int) {
         with(holder.binding) {
@@ -25,7 +28,5 @@ class imagesAdapter(private var mList: List<String>) :
         }
     }
 
-        override fun getItemCount(): Int {
-           return mList.size
-        }
+
     }

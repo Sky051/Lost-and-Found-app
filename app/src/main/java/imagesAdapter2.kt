@@ -1,10 +1,9 @@
-package com.example.imageuploader
-import android.annotation.SuppressLint
+package com.example.lostandfound
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+
 import com.example.lostandfound.databinding.Eachitem2Binding
-import com.google.android.gms.common.util.Strings
 import com.squareup.picasso.Picasso
 
 

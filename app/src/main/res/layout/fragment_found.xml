@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".found"
-    android:background="@drawable/new3">
+    android:background="@drawable/b5">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Found items"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="50sp" />
 
 
@@ -26,7 +26,8 @@
         android:layout_marginLeft="325dp"
         android:layout_marginBottom="50dp"
         android:clickable="true"
-        android:src="@drawable/baseline" />
+        android:src="@drawable/baseline"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </FrameLayout>
