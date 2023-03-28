@@ -30,10 +30,10 @@ class foundshowall : AppCompatActivity() {
 
     private fun initVars() {
         firebaseFirestore = FirebaseFirestore.getInstance()
-        binding.recyclerView.setHasFixedSize(true)
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView1.setHasFixedSize(true)
+        binding.recyclerView1.layoutManager = LinearLayoutManager(this)
         adapter = imagesAdapter2(mList)
-        binding.recyclerView.adapter = adapter
+        binding.recyclerView1.adapter = adapter
     }
 
     @SuppressLint("NotifyDataSetChanged")

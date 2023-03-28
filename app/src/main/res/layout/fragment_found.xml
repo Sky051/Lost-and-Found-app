@@ -18,6 +18,12 @@
         android:textSize="50sp" />
 
 
+    <ImageView
+        android:layout_width="292dp"
+        android:layout_height="245dp"
+        android:layout_gravity="center"
+        android:background="@drawable/losticon" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
