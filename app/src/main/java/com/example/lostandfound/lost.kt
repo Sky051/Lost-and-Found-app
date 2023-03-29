@@ -28,6 +28,14 @@ class lost: Fragment() {
         }
 
 
+
+        binding.floatingActionButton1.setOnClickListener{
+            activity?.let {
+                val intent=Intent(it,SignoutActivity::class.java)
+                it.startActivity(intent)
+            }
+        }
+
         return binding.root
     }
 

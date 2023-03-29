@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.lostandfound.databinding.ActivityFoundUploadBinding
@@ -38,7 +39,7 @@ class Found_upload : AppCompatActivity() {
         binding.showbtn.setOnClickListener {
             startActivity(Intent(this , foundshowall::class.java))
         }
-        binding.imageView1.setOnClickListener{
+        binding.imageView.setOnClickListener{
             resultLauncher.launch("image/*")
 
         }
@@ -47,7 +48,7 @@ class Found_upload : AppCompatActivity() {
     private val resultLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()){
         imageUri1 = it
-        binding.imageView1.setImageURI(it)
+        binding.imageView.setImageURI(it)
 
     }
 
@@ -66,10 +67,19 @@ class Found_upload : AppCompatActivity() {
             storageRef.putFile(it).addOnCompleteListener{ task->
                 if (task.isSuccessful){
                     storageRef.downloadUrl.addOnSuccessListener { uri->
+                        val editname = findViewById<EditText>(R.id.editName)
+                        val name : String = editname.text.toString()
+                        val editdetails= findViewById<EditText>(R.id.editdetails)
+                        val details: String= editdetails.text.toString()
+
+
+
                     val map = HashMap<String, Any>()
                     map["pic"] = uri.toString()
+                        map["name"] = name
+                        map["details"] = details
 
-                    firebaseFirestore.collection("images").add(map).addOnCompleteListener {firestoretask->
+                    firebaseFirestore.collection("foundimages").add(map).addOnCompleteListener {firestoretask->
                         if(firestoretask.isSuccessful){
                           Toast.makeText(this,"Uploaded Successfully", Toast.LENGTH_SHORT).show()
                         }else
@@ -77,7 +87,7 @@ class Found_upload : AppCompatActivity() {
                             Toast.makeText( this,firestoretask.exception?.message, Toast.LENGTH_SHORT).show()
                         }
                         binding.progressBar2.visibility=View.GONE
-                        binding.imageView1.setImageResource(R.drawable.gallery)
+                        binding.imageView.setImageResource(R.drawable.gallery)
 
 
                     }
@@ -86,7 +96,7 @@ class Found_upload : AppCompatActivity() {
                 }else{
                     Toast.makeText(this,task.exception?.message ,Toast.LENGTH_SHORT).show()
                     binding.progressBar2.visibility = View.GONE
-                    binding.imageView1.setImageResource(R.drawable.gallery)
+                    binding.imageView.setImageResource(R.drawable.gallery)
                 }
 
             }

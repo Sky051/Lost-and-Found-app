@@ -16,6 +16,8 @@ class lostshow : AppCompatActivity() {
 
     private lateinit var firebaseFirestore : FirebaseFirestore
     private var mList = mutableListOf<String>()
+    private var nList = mutableListOf<String>()
+    private var oList = mutableListOf<String>()
     private lateinit var adapterLost: imagesAdapter
 
 
@@ -36,16 +38,18 @@ class lostshow : AppCompatActivity() {
         firebaseFirestore = FirebaseFirestore.getInstance()
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        adapterLost= imagesAdapter(mList)
+        adapterLost= imagesAdapter(mList,nList,oList)
         binding.recyclerView.adapter= adapterLost
     }
     @SuppressLint("NotifyDataSetChanged")
     private fun getImages(){
         binding.progressBar3.visibility=View.VISIBLE
-     firebaseFirestore.collection("images")
+     firebaseFirestore.collection("lostimages")
          .get().addOnSuccessListener {
              for (i in it){
                  mList.add(i.data["pic"].toString())
+                 nList.add(i.data["name"].toString())
+                 oList.add(i.data["details"].toString())
              }
              adapterLost.notifyDataSetChanged()
              binding.progressBar3.visibility=View.GONE

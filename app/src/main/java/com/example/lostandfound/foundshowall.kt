@@ -15,8 +15,11 @@ class foundshowall : AppCompatActivity() {
 
     private lateinit var binding:ActivityFoundshowallBinding
     private lateinit var firebaseFirestore: FirebaseFirestore
+    private var nList = mutableListOf<String>()
     private var mList = mutableListOf<String>()
-    private lateinit var adapter: imagesAdapter2
+    private var oList = mutableListOf<String>()
+
+    private lateinit var adapterfound: imagesAdapter2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,19 +35,23 @@ class foundshowall : AppCompatActivity() {
         firebaseFirestore = FirebaseFirestore.getInstance()
         binding.recyclerView1.setHasFixedSize(true)
         binding.recyclerView1.layoutManager = LinearLayoutManager(this)
-        adapter = imagesAdapter2(mList)
-        binding.recyclerView1.adapter = adapter
+        adapterfound = imagesAdapter2(mList,nList,oList)
+        binding.recyclerView1.adapter = adapterfound
     }
 
     @SuppressLint("NotifyDataSetChanged")
     private fun getImages(){
         binding.progressBar3.visibility = View.VISIBLE
-        firebaseFirestore.collection("images")
+        firebaseFirestore.collection("foundimages")
             .get().addOnSuccessListener {
                 for(i in it){
                     mList.add(i.data["pic"].toString())
+                    nList.add(i.data["name"].toString())
+                    oList.add(i.data["details"].toString())
+
+
                 }
-                adapter.notifyDataSetChanged()
+                adapterfound.notifyDataSetChanged()
                 binding.progressBar3.visibility = View.GONE
             }
     }

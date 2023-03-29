@@ -6,11 +6,16 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.lostandfound.databinding.ActivityLostuploadBinding
 import com.example.lostandfound.databinding.FragmentFoundBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
@@ -61,12 +66,20 @@ class lostupload : AppCompatActivity() {
                 if(task.isSuccessful){
                     storageRef.downloadUrl.addOnSuccessListener { uri ->
 
+                        val editname = findViewById<EditText>(R.id.editName)
+                        val name : String = editname.text.toString()
+                        val editdetails= findViewById<EditText>(R.id.editdetails)
+                        val details: String= editdetails.text.toString()
+
                         val map = HashMap<String , Any>()
                         map["pic"]= uri.toString()
+                        map["name"] = name
+                        map["details"] = details
 
-                        firebaseFirestore.collection("images").add(map).addOnCompleteListener {FirestoreTask ->
+                        firebaseFirestore.collection("lostimages").add(map).addOnCompleteListener {FirestoreTask ->
 
                         if (FirestoreTask.isSuccessful){
+
                             Toast.makeText( this,"Uploaded Successfully",Toast.LENGTH_SHORT).show()
 
                         }else{

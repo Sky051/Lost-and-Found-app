@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/b5"
     tools:context=".Found_upload">
+
     <TextView
         android:id="@+id/text11"
         android:layout_width="match_parent"
@@ -16,10 +17,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintVertical_bias="0.038" />
 
     <Button
         android:id="@+id/uploadbtn"
@@ -31,20 +32,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView1"
-        app:layout_constraintVertical_bias="0.457" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.664" />
 
     <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="332dp"
-        android:layout_height="305dp"
-        android:layout_marginTop="64dp"
+        android:id="@+id/imageView"
+        android:layout_width="243dp"
+        android:layout_height="214dp"
+        android:layout_marginTop="28dp"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text11"
         app:srcCompat="@drawable/gallery" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="289dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter The Details of the Item"
+        app:layout_constraintBottom_toTopOf="@+id/uploadbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <EditText
+        android:id="@+id/editdetails"
+        android:layout_width="285dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Location"
+        app:layout_constraintBottom_toTopOf="@+id/uploadbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.494" />
 
     <ProgressBar
         android:id="@+id/progressBar2"
@@ -57,7 +85,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView1"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.415" />
 
     <Button
@@ -69,8 +97,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uploadbtn" />
-
+        app:layout_constraintTop_toBottomOf="@+id/uploadbtn"
+        app:layout_constraintVertical_bias="0.278" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

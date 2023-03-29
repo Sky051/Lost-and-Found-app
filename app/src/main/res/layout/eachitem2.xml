@@ -2,7 +2,7 @@
 
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="450dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
     app:cardElevation="12dp"
@@ -10,9 +10,26 @@
 
 
     <ImageView
+        android:id="@+id/ImageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:id="@+id/ImageView2"
+        android:layout_height="264dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:layout_marginTop="280dp"
+        android:text="TextView"
         />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:layout_marginTop="350dp"
+        android:text="TextView" />
+
 </com.google.android.material.card.MaterialCardView>
